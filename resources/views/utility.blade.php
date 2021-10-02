@@ -52,7 +52,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal hide fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg text-white" role="document">
         <div class="modal-content bg-dark">
             <div class="modal-header">
@@ -116,7 +116,7 @@
                             <tr>
                                 <td>1</td>
                                 <td>
-                                    <select name="tipe_rusak" id="tipe_rusak" class="form-control select" style="width: 100%;" name="">
+                                    <select name="tipe_rusak" id="tipe_rusak" class="form-control select" style="width: 100%;z-index:-9" name="">
                                         <option value="">Tipe Kerusakan</option>
                                         <option>Rutin</option>
                                         <option>Urgent</option>

@@ -129,7 +129,7 @@
   <script>
     feather.replace()
     $(function() {
-      $('.select').select2()
+      $('#tipe_rusak').select2()
     })
   </script>
 </body>
