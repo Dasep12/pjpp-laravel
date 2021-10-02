@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Validator;
+use App\Models\Utility;
+use App\Models\Pelanggan;
 
 class UtilityController extends Controller
 {
@@ -12,8 +14,11 @@ class UtilityController extends Controller
     public function index()
     {
         # code...
+        $kode  = "G001";
         $data = [
-            'title'  => 'Utility'
+            'title'      => 'Utility',
+            'utility'    => Utility::where('kode_dc', $kode)->get(),
+            'pelanggan'  => Pelanggan::where('kode_dc', $kode)->get(),
         ];
         return view('utility', $data);
     }
