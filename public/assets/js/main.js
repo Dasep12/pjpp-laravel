@@ -49,4 +49,23 @@ $(function(){
         }
     }
 
+    //request tipe kerusakan 
+    $("#tipe_rusak").on('change', function() {
+       var id =  $("#tipe_rusak").val();
+       if(id == "Rutin"){
+           document.getElementById('jamSLA').innerHTML = 89 ;
+           document.getElementById('jamSLA1').innerHTML = 89 ;
+           document.getElementById('prioritas').innerHTML = "Rutin";
+           document.getElementById('sla_jam').value = 89 ;
+        }else if(id == "Urgent") {
+            document.getElementById('jamSLA').innerHTML = 150 ;
+            document.getElementById('jamSLA1').innerHTML = 150 ;
+            document.getElementById('sla_jam').value = 150 ;
+            document.getElementById('prioritas').innerHTML = "Urgent";
+        }else {
+            document.getElementById('jamSLA').innerHTML = "" ;
+            document.getElementById('jamSLA1').innerHTML = "" ;
+            document.getElementById('prioritas').innerHTML = "";
+       }
+    })
 })
