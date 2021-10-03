@@ -25,8 +25,9 @@ $(function(){
                     progress_bar_process(percentage, timer);
                     }, 1000);
                     $("#posting")[0].reset();
-                    location.reload();
+                   // location.reload();
                     //alert(data.msg);
+                    console.log(data.msg);
                 }
             },
             complete : function(){

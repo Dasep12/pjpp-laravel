@@ -11,7 +11,7 @@
 
                 </div>
                 <div class="table-responsive">
-                    <table class="table mt-3">
+                    <table class="table mt-3 table-bordered">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -26,20 +26,23 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @php($no = 1 )
+                            @foreach($data as $pjpp)
                             <tr>
-                                <td>1</td>
+                                <td>{{ $no++ }}</td>
                                 <td>
                                     <button class="btn btn-success btn-sm"><i class="fa fa-check"></i> </button>
                                     <button style="width: 43%;" class="btn btn-info btn-sm"><i class="fa fa-info"></i></button>
                                 </td>
-                                <td>PJPP-K/2021/03/002/003356</td>
-                                <td><label class="badge badge-primary">Selesai</label></td>
-                                <td></td>
-                                <td>G001</td>
-                                <td>DC JKT 1</td>
+                                <td>{{ $pjpp->no_pjpp }}</td>
+                                <td><label class="badge badge-primary">{{ $pjpp->status }}</label></td>
+                                <td>{{ $pjpp->no_seri }}</td>
+                                <td>{{ $pjpp->pelanggan }}</td>
+                                <td>{{ $pjpp->gudang }}</td>
                                 <td>G001</td>
                                 <td>DC JAKARTA</td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -97,6 +100,13 @@
                                 <span class="text-danger small error-text pelanggan_error"></span>
                             </div>
                             <div class="form-group">
+                                <label for="exampleInputEmail1">Depertement<span class="text-danger"> *</span></label>
+                                <select name="departement" id="departement" data-container="body" data-live-search="true" title="Pilih Departement" data-hide-disabled="true" class="form-control selectpicker">
+                                    <option value=""> Pilih Departement</option>
+                                </select>
+                                <span class="text-danger small error-text departement_error"></span>
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleInputPassword1">NIK Pemakai</label>
                                 <input type="text" name="nik_pemakai" id="nik_pemakai" class="form-control" id="exampleInputPassword1" placeholder="nik pengguna">
                                 <span class="text-danger small error-text nik_pemakai_error"></span>
@@ -111,6 +121,7 @@
                     <h4 class="ml-3">Daftar Refarasi</h4>
                     <hr>
                     <div class="row">
+
                         <table class="table text-white">
                             <th>#</th>
                             <th>Tipe Kerusakan</th>
@@ -138,10 +149,10 @@
                             </tr>
                             <tfoot>
                                 <td colspan="2">
-                                    <label>Total SLA : <span id="jamSLA"></span> Jam</label>
                                 </td>
-                                <td colspan="1">
-                                    <label>Prioritas : Utility - <span id="prioritas"></span></label>
+                                <td>
+                                    <label class="badge badge-primary">Total SLA : <span id="jamSLA"></span> 0 Jam</label>
+                                    <label class="badge badge-danger">Prioritas : Utility - <span id="prioritas"></span></label>
                                 </td>
                                 <td></td>
                             </tfoot>
